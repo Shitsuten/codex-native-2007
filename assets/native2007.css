@@ -1210,6 +1210,8 @@ html.codex-native2007 .composer-surface-chrome {
   color: #17324c !important;
   border-radius: 6px !important;
   background: #ffffff !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
   box-shadow:
     inset 0 0 0 1px #ffffff,
     0 0 0 1px #9fc2dc,
@@ -1243,6 +1245,44 @@ html.codex-native2007 .qq2007-composer-editor {
   box-shadow:
     inset 0 1px 2px rgb(36 91 132 / .08),
     0 1px #ffffff !important;
+}
+
+/* First-frame composer fallback: these native attributes exist before the
+   renderer has attached its qq2007 helper classes. */
+html.codex-native2007 .composer-surface-chrome
+  [class~="grid"]:has([data-composer-navigation-target="add-context"]):has(
+    [data-composer-navigation-target="reasoning"]
+  ):has([data-codex-composer]) {
+  margin-bottom: 0 !important;
+  padding: 7px 8px 8px !important;
+  row-gap: 7px !important;
+  column-gap: 8px !important;
+  background:
+    linear-gradient(180deg, #edf7fd 0, #dceefa 100%) !important;
+  box-shadow:
+    inset 0 -1px #ffffff,
+    inset 0 1px rgb(255 255 255 / .65) !important;
+}
+
+html.codex-native2007 .composer-surface-chrome
+  [class~="grid"]:has([data-composer-navigation-target="add-context"]):has(
+    [data-composer-navigation-target="reasoning"]
+  ):has([data-codex-composer])
+  > :has([data-codex-composer]) {
+  color: #17324c !important;
+  margin-inline: 0 !important;
+  border: 1px solid #91b7d4 !important;
+  border-radius: 3px !important;
+  background:
+    linear-gradient(180deg, #ffffff 0, #f7fbfe 100%) !important;
+  box-shadow:
+    inset 0 1px 2px rgb(36 91 132 / .08),
+    0 1px #ffffff !important;
+}
+
+html.codex-native2007 .composer-surface-chrome
+  [class*="_attachmentsDefault_"]:empty {
+  display: none !important;
 }
 
 html.codex-native2007
@@ -2103,6 +2143,19 @@ html.codex-native2007:is(
   [data-qq2007-palette="pink"],
   [data-qq2007-palette="violet"],
   [data-qq2007-palette="mint"]
+) .composer-surface-chrome
+  [class~="grid"]:has([data-composer-navigation-target="add-context"]):has(
+    [data-composer-navigation-target="reasoning"]
+  ):has([data-codex-composer])
+  > :has([data-codex-composer]) {
+  color: var(--qq-ink) !important;
+  border-color: var(--qq-line-soft) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
 ) :is(
   .qq2007-usage-button,
   .qq2007-composer-footer
@@ -2425,6 +2478,23 @@ html.codex-native2007:is(
   [data-qq2007-palette="violet"],
   [data-qq2007-palette="mint"]
 ) .qq2007-composer-footer {
+  background:
+    linear-gradient(
+      105deg,
+      var(--qq-surface-tint) 0,
+      var(--qq-blue-100) 65%,
+      var(--qq-accent-soft) 135%
+    ) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .composer-surface-chrome
+  [class~="grid"]:has([data-composer-navigation-target="add-context"]):has(
+    [data-composer-navigation-target="reasoning"]
+  ):has([data-codex-composer]) {
   background:
     linear-gradient(
       105deg,
