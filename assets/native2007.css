@@ -1,0 +1,2487 @@
+@font-face {
+  font-family: "QQ2007 UI";
+  src: url("__RETRO_MENU_FONT_DATA__") format("woff");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root.codex-native2007 {
+  color-scheme: light;
+
+  --qq-blue-950: #073f7d;
+  --qq-blue-900: #0d529c;
+  --qq-blue-800: #1268b7;
+  --qq-blue-700: #2a82c8;
+  --qq-blue-600: #4b9ed9;
+  --qq-blue-400: #84bee8;
+  --qq-blue-300: #acd4f0;
+  --qq-blue-200: #cfe8f8;
+  --qq-blue-100: #e7f4fd;
+  --qq-blue-050: #f5fbff;
+  --qq-ink: #15304a;
+  --qq-muted: #5d7790;
+  --qq-line: #6699c6;
+  --qq-line-soft: #a9c9e3;
+  --qq-user-line: #78a9d1;
+  --qq-white: #fbfdff;
+  --qq-focus: #176fb8;
+  --qq2007-user-avatar: url("__NATIVE2007_USER_AVATAR_DATA__");
+  --qq2007-icon-new-task: url("__QQ2007_ICON_NEW_TASK_DATA__");
+  --qq2007-icon-scheduled: url("__QQ2007_ICON_SCHEDULED_DATA__");
+  --qq2007-icon-plugins: url("__QQ2007_ICON_PLUGINS_DATA__");
+  --qq2007-icon-project: url("__QQ2007_ICON_PROJECT_DATA__");
+  --qq2007-icon-quick-chat: url("__QQ2007_ICON_QUICK_CHAT_DATA__");
+  --qq2007-icon-attach: url("__QQ2007_ICON_ATTACH_DATA__");
+  --qq2007-icon-pull-requests: url("__QQ2007_ICON_PULL_REQUESTS_DATA__");
+  --qq2007-icon-sites: url("__QQ2007_ICON_SITES_DATA__");
+  --qq2007-icon-search: url("__QQ2007_ICON_SEARCH_DATA__");
+  --qq2007-icon-help: url("__QQ2007_ICON_HELP_DATA__");
+
+  --font-sans: Tahoma, "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC",
+    -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans-default: Tahoma, "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC",
+    -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-openai-sans: Tahoma, "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC",
+    -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-token-row: 3px;
+  --radius-token-composer-single-line: 5px;
+
+  --color-token-bg-primary: #d9ebf8;
+  --color-token-bg-secondary: #eaf5fc;
+  --color-token-bg-tertiary: #d7eaf8;
+  --color-token-bg-fog: rgb(41 111 170 / .08);
+  --color-token-bg-appshot: #d4e9f7;
+  --color-token-main-surface-primary: #fbfdff;
+  --color-token-side-bar-background: #eef7fd;
+  --color-token-foreground: var(--qq-ink);
+  --color-token-text-primary: var(--qq-ink);
+  --color-token-text-secondary: #4f6b85;
+  --color-token-text-tertiary: #71879b;
+  --color-token-description-foreground: #71879b;
+  --color-token-icon-foreground: #254f73;
+  --color-token-border: #9fc1dc;
+  --color-token-border-default: #9fc1dc;
+  --color-token-border-light: #c7dff0;
+  --color-token-border-heavy: #6596c1;
+  --color-token-input-border: #7aa8cf;
+  --color-token-input-background: #ffffff;
+  --color-token-input-foreground: var(--qq-ink);
+  --color-token-input-placeholder-foreground: #8799aa;
+  --color-token-button-background: #287fc4;
+  --color-token-button-foreground: #ffffff;
+  --color-token-button-border: #5d91bf;
+  --color-token-button-secondary-hover-background: #d4eafb;
+  --color-token-toolbar-hover-background: #d4eafb;
+  --color-token-list-hover-background: #dceefa;
+  --color-token-list-active-selection-background: #c6e3f7;
+  --color-token-list-active-selection-foreground: #12385e;
+  --color-token-list-active-selection-icon-foreground: #1b6199;
+  --color-token-list-focus-outline: var(--qq-focus);
+  --color-token-focus-border: var(--qq-focus);
+  --color-token-primary: #237ac1;
+  --color-token-link: #176fb8;
+  --color-token-text-link-foreground: #176fb8;
+  --color-token-text-link-active-foreground: #0d529c;
+  --color-token-menu-background: #f8fcff;
+  --color-token-menu-border: #5f91bd;
+  --color-token-dropdown-background: #f8fcff;
+  --color-token-dropdown-foreground: var(--qq-ink);
+  --color-token-badge-background: #d9edfb;
+  --color-token-badge-foreground: #20557f;
+  --color-token-editor-background: #fbfdff;
+  --color-token-editor-foreground: var(--qq-ink);
+  --color-token-editor-widget-background: #f8fcff;
+  --color-token-editor-selection-background: #c9e6fa;
+  --color-token-editor-find-match-background: #fff2a9;
+  --color-token-editor-find-match-highlight-background: #fff8cf;
+  --color-token-terminal-background: #f6fbff;
+  --color-token-terminal-foreground: #17324c;
+  --color-token-terminal-border: #8eb6d6;
+  --color-token-text-preformat-background: #eef7fd;
+  --color-token-text-preformat-foreground: #17324c;
+  --color-token-text-code-block-background: #eef7fd;
+  --color-token-scrollbar-slider-background: rgb(54 124 182 / .28);
+  --color-token-scrollbar-slider-hover-background: rgb(40 111 170 / .42);
+  --color-token-scrollbar-slider-active-background: rgb(30 91 145 / .52);
+}
+
+html.codex-native2007,
+html.codex-native2007 body {
+  color: var(--qq-ink) !important;
+  background: #2d82c6 !important;
+  font-family: var(--font-sans) !important;
+}
+
+html.codex-native2007 *,
+html.codex-native2007 *::before,
+html.codex-native2007 *::after {
+  box-sizing: border-box;
+}
+
+html.codex-native2007 * {
+  scrollbar-color: #6fa8d3 #e7f3fb;
+}
+
+html.codex-native2007 *::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+html.codex-native2007 *::-webkit-scrollbar-track {
+  border-left: 1px solid #c3dced;
+  background: #eaf5fc;
+}
+
+html.codex-native2007 *::-webkit-scrollbar-thumb {
+  border: 2px solid #eaf5fc;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #a8d0ec, #5d9dd0);
+}
+
+html.codex-native2007 ::selection {
+  color: #0b2d4c;
+  background: #b9dcf8;
+}
+
+/* A non-interactive window edge only. No replacement controls or layout. */
+#codex-native2007-chrome {
+  position: fixed;
+  z-index: 2147480000;
+  inset: 0;
+  border: 2px solid #0b58a3;
+  border-radius: 5px;
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / .48),
+    inset 0 2px rgb(255 255 255 / .2);
+  pointer-events: none;
+}
+
+/* Native application title bar. */
+html.codex-native2007 [class~="group/application-menu-top-bar"] {
+  min-height: 40px !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid #084d91 !important;
+  background:
+    linear-gradient(180deg, #55a7df 0, #2b83c9 48%, #1268b5 100%) !important;
+  box-shadow:
+    inset 0 1px rgb(255 255 255 / .58),
+    inset 0 -1px rgb(0 50 99 / .28),
+    0 1px 2px rgb(0 48 91 / .24) !important;
+  backdrop-filter: none !important;
+}
+
+html.codex-native2007 [class~="group/application-menu-top-bar"] * {
+  color: inherit !important;
+  text-shadow: 0 1px #07508d;
+}
+
+html.codex-native2007 [class~="group/application-menu-top-bar"] button {
+  border: 1px solid transparent !important;
+  border-radius: 3px !important;
+}
+
+html.codex-native2007 [class~="group/application-menu-top-bar"] button:hover,
+html.codex-native2007 [class~="group/application-menu-top-bar"] button:focus-visible {
+  border-color: rgb(255 255 255 / .5) !important;
+  background: rgb(255 255 255 / .14) !important;
+  outline: 0 !important;
+}
+
+/* Native left sidebar. Width and behavior remain owned by Codex. */
+html.codex-native2007 aside.app-shell-left-panel {
+  color: var(--qq-ink) !important;
+  border-right: 1px solid #4f89bb !important;
+  background:
+    linear-gradient(90deg, #fbfdff 0, #f3f9fe 72%, #e4f1fa 100%) !important;
+  box-shadow:
+    inset -1px 0 rgb(255 255 255 / .65),
+    1px 0 3px rgb(10 63 107 / .15) !important;
+}
+
+/* QQ 2007 used separate inset panes rather than one edge-to-edge canvas. */
+html.codex-native2007 .qq2007-workspace-shell {
+  gap: 6px !important;
+  padding: 52px 6px 6px !important;
+  background:
+    linear-gradient(180deg, #b9d9ef 0, #8ebdde 55%, #73acd5 100%) !important;
+  box-shadow:
+    inset 0 1px rgb(255 255 255 / .72),
+    inset 0 -1px rgb(20 83 135 / .24) !important;
+}
+
+html.codex-native2007
+  .qq2007-workspace-shell
+  > aside.app-shell-left-panel {
+  min-height: 0 !important;
+  padding-top: 0 !important;
+  color: var(--qq-ink) !important;
+  border: 1px solid #568dbb !important;
+  border-radius: 5px 0 0 5px !important;
+  background:
+    linear-gradient(90deg, #fbfdff 0, #f3f9fe 72%, #e4f1fa 100%) !important;
+  box-shadow:
+    inset 1px 0 rgb(255 255 255 / .74),
+    inset 0 1px rgb(255 255 255 / .74),
+    inset 0 -1px rgb(255 255 255 / .74),
+    0 1px 2px rgb(16 68 111 / .18) !important;
+}
+
+html.codex-native2007
+  .qq2007-workspace-shell
+  > aside.app-shell-left-panel
+  > .group.absolute {
+  top: 0 !important;
+}
+
+html.codex-native2007
+  .qq2007-workspace-shell
+  > aside.app-shell-left-panel
+  > .group.absolute::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 9px;
+  width: 6px;
+  content: "";
+  background:
+    linear-gradient(180deg, #b9d9ef 0, #8ebdde 55%, #73acd5 100%);
+  pointer-events: none;
+}
+
+html.codex-native2007
+  .qq2007-workspace-shell
+  > main.main-surface {
+  min-height: 0 !important;
+  border: 1px solid #568dbb !important;
+  border-radius: 0 5px 5px 0 !important;
+  background: #fbfdff !important;
+  box-shadow:
+    inset -1px 0 rgb(255 255 255 / .74),
+    inset 0 1px rgb(255 255 255 / .74),
+    inset 0 -1px rgb(255 255 255 / .74),
+    0 1px 2px rgb(16 68 111 / .18) !important;
+}
+
+html.codex-native2007 aside.app-shell-left-panel nav,
+html.codex-native2007 aside.app-shell-left-panel [class*="sidebar"] {
+  color: inherit;
+}
+
+html.codex-native2007 aside.app-shell-left-panel button,
+html.codex-native2007 aside.app-shell-left-panel [role="button"] {
+  min-height: 28px;
+  color: #1a354e !important;
+  border: 1px solid transparent !important;
+  border-radius: 3px !important;
+  font-size: 12px !important;
+  line-height: 1.25 !important;
+  text-shadow: 0 1px #ffffff;
+}
+
+html.codex-native2007 aside.app-shell-left-panel button:hover,
+html.codex-native2007 aside.app-shell-left-panel [role="button"]:hover {
+  border-color: #8ab4d6 !important;
+  background: linear-gradient(#ffffff, #dceefa) !important;
+}
+
+html.codex-native2007 aside.app-shell-left-panel
+  :is([aria-current="page"], [aria-selected="true"], [data-state="active"]) {
+  color: #12385e !important;
+  border-color: #5f96c3 !important;
+  background: linear-gradient(#c5e3f8, #f6fbff) !important;
+  box-shadow:
+    inset 0 1px #ffffff,
+    inset 0 0 0 1px rgb(255 255 255 / .34) !important;
+}
+
+html.codex-native2007 aside.app-shell-left-panel svg {
+  width: 17px;
+  height: 17px;
+  stroke-width: 1.7;
+}
+
+/* Native section headings become compact QQ 2007 separator bars. */
+html.codex-native2007 aside.app-shell-left-panel
+  [class~="group/nav-section-title"] {
+  min-height: 24px !important;
+  margin-inline: -8px !important;
+  padding: 0 8px 0 14px !important;
+  color: #245b88 !important;
+  border-top: 1px solid #9ec4e1 !important;
+  border-bottom: 1px solid #77a9d0 !important;
+  background:
+    linear-gradient(180deg, #f8fcff 0, #d8edf9 48%, #c9e4f6 100%) !important;
+  box-shadow:
+    inset 0 1px #ffffff,
+    inset 0 -1px rgb(255 255 255 / .42) !important;
+}
+
+html.codex-native2007 aside.app-shell-left-panel
+  [data-app-action-sidebar-section-toggle] {
+  min-height: 22px !important;
+  color: #245b88 !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px #ffffff;
+}
+
+html.codex-native2007 aside.app-shell-left-panel
+  [data-app-action-sidebar-section-toggle]:hover {
+  border-color: transparent !important;
+  background: rgb(255 255 255 / .28) !important;
+}
+
+/* Generated QQ 2007 pixel icons decorate native controls without replacing them. */
+html.codex-native2007 .qq2007-icon-host {
+  --qq2007-icon-size: 17px;
+  position: relative;
+}
+
+html.codex-native2007 .qq2007-icon-host::before {
+  content: "";
+  width: var(--qq2007-icon-size);
+  height: var(--qq2007-icon-size);
+  display: block;
+  flex: 0 0 var(--qq2007-icon-size);
+  background-image: var(--qq2007-icon-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: drop-shadow(0 1px 0 rgb(255 255 255 / .72));
+  image-rendering: pixelated;
+}
+
+html.codex-native2007 .qq2007-icon-host > svg.qq2007-native-icon {
+  display: none !important;
+}
+
+html.codex-native2007 .qq2007-icon-new-task {
+  --qq2007-icon-image: var(--qq2007-icon-new-task);
+}
+
+html.codex-native2007 .qq2007-icon-scheduled {
+  --qq2007-icon-image: var(--qq2007-icon-scheduled);
+}
+
+html.codex-native2007 .qq2007-icon-plugins {
+  --qq2007-icon-image: var(--qq2007-icon-plugins);
+}
+
+html.codex-native2007 .qq2007-icon-project {
+  --qq2007-icon-image: var(--qq2007-icon-project);
+}
+
+html.codex-native2007 .qq2007-icon-quick-chat {
+  --qq2007-icon-image: var(--qq2007-icon-quick-chat);
+  --qq2007-icon-size: 16px;
+}
+
+html.codex-native2007 aside.app-shell-left-panel
+  span:has(> button[aria-label="Quick chat"]) {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+html.codex-native2007 .qq2007-icon-attach {
+  --qq2007-icon-image: var(--qq2007-icon-attach);
+  --qq2007-icon-size: 17px;
+}
+
+html.codex-native2007 .qq2007-icon-pull-requests {
+  --qq2007-icon-image: var(--qq2007-icon-pull-requests);
+}
+
+html.codex-native2007 .qq2007-icon-sites {
+  --qq2007-icon-image: var(--qq2007-icon-sites);
+}
+
+html.codex-native2007 .qq2007-icon-search {
+  --qq2007-icon-image: var(--qq2007-icon-search);
+  --qq2007-icon-size: 16px;
+}
+
+html.codex-native2007 .qq2007-icon-help {
+  --qq2007-icon-image: var(--qq2007-icon-help);
+  --qq2007-icon-size: 20px;
+}
+
+html.codex-native2007 aside.app-shell-left-panel
+  button[aria-label="Open profile menu"] {
+  min-height: 34px !important;
+  padding-left: 5px !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transition:
+    border-color 120ms ease-out,
+    background-color 120ms ease-out,
+    box-shadow 120ms ease-out;
+}
+
+html.codex-native2007 aside.app-shell-left-panel
+  button[aria-label="Open profile menu"]:is(
+    :hover,
+    :focus-visible,
+    [data-state="open"],
+    [aria-expanded="true"]
+  ) {
+  border-color: #8eb6d6 !important;
+  background: linear-gradient(#ffffff, #e0f0fb) !important;
+  box-shadow: inset 0 1px #ffffff !important;
+}
+
+html.codex-native2007 aside.app-shell-left-panel
+  button[aria-label="Open profile menu"] > img {
+  display: none !important;
+}
+
+html.codex-native2007 aside.app-shell-left-panel
+  button[aria-label="Open profile menu"]::before {
+  content: "";
+  width: 29px;
+  height: 29px;
+  display: block;
+  flex: 0 0 29px;
+  background: var(--qq2007-user-avatar) center / contain no-repeat;
+  filter: drop-shadow(0 1px 1px rgb(4 45 78 / .25));
+}
+
+html.codex-native2007 aside.app-shell-left-panel
+  :is(h2, h3, [class*="section-label"], [class*="group-label"]) {
+  color: #2b608c !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+}
+
+/* Native main surface and native header. */
+html.codex-native2007 main.main-surface {
+  min-width: 0 !important;
+  color: var(--qq-ink) !important;
+  border-left: 0 !important;
+  background: #fbfdff !important;
+}
+
+html.codex-native2007 main.main-surface > header.app-header-tint {
+  min-height: 40px !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid #084d91 !important;
+  background:
+    linear-gradient(180deg, #55a7df 0, #2b83c9 48%, #1268b5 100%) !important;
+  box-shadow:
+    inset 0 1px rgb(255 255 255 / .58),
+    inset 0 -1px rgb(0 50 99 / .28),
+    0 1px 2px rgb(0 48 91 / .24) !important;
+  backdrop-filter: none !important;
+}
+
+html.codex-native2007 main.main-surface > header.app-header-tint * {
+  color: #ffffff !important;
+  text-shadow: 0 1px #07508d;
+}
+
+html.codex-native2007 main.main-surface > header.app-header-tint button {
+  border: 1px solid transparent !important;
+  border-radius: 3px !important;
+}
+
+html.codex-native2007 main.main-surface > header.app-header-tint button:hover {
+  border-color: rgb(255 255 255 / .5) !important;
+  background: rgb(255 255 255 / .14) !important;
+}
+
+html.codex-native2007 .app-shell-main-content-frame {
+  border-top: 0 !important;
+  background: #fbfdff !important;
+}
+
+html.codex-native2007 .app-shell-main-content-top-fade {
+  display: none !important;
+}
+
+html.codex-native2007 [role="main"] {
+  color: var(--qq-ink) !important;
+  background: #fbfdff !important;
+}
+
+/* Conversation content. Do not alter widths, flex, positioning, or portals. */
+html.codex-native2007 main.main-surface
+  :is([data-message-author-role], article, [class*="_markdownContent_"]) {
+  color: #18334d !important;
+  font-size: 13px;
+  line-height: 1.58;
+}
+
+/* Assistant replies as compact early-web forum posts. */
+html.codex-native2007 main.main-surface .qq2007-forum-post {
+  position: relative;
+  width: 100%;
+  margin: 4px 0 12px !important;
+  color: var(--qq-ink) !important;
+  border: 1px solid var(--qq-line) !important;
+  border-radius: 2px !important;
+  background: #ffffff !important;
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / .7),
+    0 1px 2px rgb(28 81 123 / .12) !important;
+  overflow: hidden;
+}
+
+html.codex-native2007 main.main-surface .qq2007-forum-post::before {
+  min-height: 27px;
+  display: block;
+  content: "匿名用户 Codex2007　·　在线";
+  padding: 5px 78px 4px 31px;
+  color: var(--qq-blue-900);
+  font: 700 12px/17px "QQ2007 UI", Tahoma, "Microsoft YaHei UI", sans-serif;
+  text-shadow: 0 1px #ffffff;
+  border-bottom: 1px solid var(--qq-line-soft);
+  background:
+    var(--qq2007-icon-quick-chat) 7px 50% / 18px 18px no-repeat,
+    linear-gradient(
+      180deg,
+      #ffffff 0,
+      var(--qq-blue-050) 34%,
+      var(--qq-blue-100) 100%
+    );
+  box-shadow:
+    inset 0 1px #ffffff,
+    inset 0 -1px rgb(255 255 255 / .72);
+}
+
+html.codex-native2007 main.main-surface .qq2007-forum-post::after {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  content: "UID 2007";
+  color: var(--qq-muted);
+  font: 500 11px/15px Tahoma, "Microsoft YaHei UI", sans-serif;
+  text-shadow: 0 1px #ffffff;
+}
+
+html.codex-native2007 main.main-surface .qq2007-forum-content {
+  padding: 12px 14px 14px !important;
+  background:
+    linear-gradient(90deg, rgb(232 244 252 / .26), transparent 42px),
+    #ffffff !important;
+}
+
+html.codex-native2007 main.main-surface .qq2007-forum-extras {
+  margin: 0 10px 10px !important;
+  padding: 0 !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-extras
+  > div {
+  gap: 4px !important;
+}
+
+html.codex-native2007 main.main-surface
+  :is(.qq2007-forum-resource-card, .qq2007-forum-diff-card) {
+  --thread-resource-card-row-padding-x: 7px !important;
+  margin: 0 !important;
+  color: var(--qq-ink) !important;
+  font-size: 12px !important;
+  border: 1px solid var(--qq-line-soft) !important;
+  border-radius: 2px !important;
+  background: var(--qq-blue-050) !important;
+  box-shadow:
+    inset 0 1px #ffffff,
+    0 1px rgb(255 255 255 / .75) !important;
+}
+
+html.codex-native2007 main.main-surface
+  :is(.qq2007-forum-resource-card, .qq2007-forum-diff-card)
+  :is([class~="group/end-resource"], [class~="group/turn-diff-header"])
+  > span {
+  min-height: 34px !important;
+  gap: 7px !important;
+  padding: 4px 7px !important;
+}
+
+html.codex-native2007 main.main-surface
+  :is(.qq2007-forum-resource-card, .qq2007-forum-diff-card)
+  :is([class~="group/end-resource"], [class~="group/turn-diff-header"])
+  > span
+  > span:first-child {
+  width: 24px !important;
+  height: 24px !important;
+  flex-basis: 24px !important;
+  color: var(--qq-blue-900) !important;
+  border: 1px solid var(--qq-line-soft);
+  border-radius: 2px !important;
+  background:
+    linear-gradient(180deg, #ffffff, var(--qq-blue-100)) !important;
+  box-shadow: inset 0 1px #ffffff;
+}
+
+html.codex-native2007 main.main-surface
+  :is(.qq2007-forum-resource-card, .qq2007-forum-diff-card)
+  :is([class~="group/end-resource"], [class~="group/turn-diff-header"])
+  > span
+  > span:first-child
+  svg {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-resource-card
+  [class~="group/end-resource"]
+  > span
+  > span:nth-child(2)
+  > span:first-child::before {
+  content: "附件 · ";
+  color: var(--qq-blue-900);
+  font-weight: 700;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-diff-card
+  [class~="group/turn-diff-header"]
+  > span
+  > span:nth-child(2)
+  > span:first-child::before {
+  content: "操作记录 · ";
+  color: var(--qq-blue-900);
+  font-weight: 700;
+}
+
+html.codex-native2007 main.main-surface
+  :is(.qq2007-forum-resource-card, .qq2007-forum-diff-card)
+  [class~="text-size-chat"] {
+  font-size: 12px !important;
+  line-height: 16px !important;
+}
+
+html.codex-native2007 main.main-surface
+  :is(.qq2007-forum-resource-card, .qq2007-forum-diff-card)
+  [class~="text-size-chat-sm"] {
+  color: var(--qq-muted) !important;
+  font-size: 10px !important;
+  line-height: 13px !important;
+}
+
+html.codex-native2007 main.main-surface
+  :is(.qq2007-forum-resource-card, .qq2007-forum-diff-card)
+  :is(.end-resource-open-button, [class~="group/turn-diff-header"] > span > div > button) {
+  min-width: 0 !important;
+  height: 23px !important;
+  padding: 0 7px !important;
+  color: #315b7d !important;
+  font: 500 11px/21px Tahoma, "Microsoft YaHei UI", sans-serif !important;
+  border: 1px solid var(--qq-line-soft) !important;
+  border-radius: 2px !important;
+  background:
+    linear-gradient(180deg, #ffffff, var(--qq-blue-100)) !important;
+  box-shadow: inset 0 1px #ffffff !important;
+}
+
+html.codex-native2007 main.main-surface
+  :is(.qq2007-forum-resource-card, .qq2007-forum-diff-card)
+  :is(.end-resource-open-button, [class~="group/turn-diff-header"] > span > div > button):hover {
+  color: var(--qq-blue-900) !important;
+  border-color: var(--qq-line) !important;
+  background:
+    linear-gradient(180deg, #ffffff, var(--qq-blue-200)) !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-diff-card
+  > div:last-child {
+  border-top-color: var(--qq-line-soft) !important;
+  background: #ffffff !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-diff-card
+  .thread-diff-virtualized
+  + .thread-diff-virtualized {
+  border-top: 1px solid var(--qq-blue-100);
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-diff-card
+  .thread-diff-virtualized
+  > span
+  > button {
+  height: 28px !important;
+  gap: 6px !important;
+  padding: 3px 8px !important;
+  color: #315b7d !important;
+  font-size: 11px !important;
+  background: #ffffff !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-diff-card
+  .thread-diff-virtualized:nth-child(even)
+  > span
+  > button {
+  background: var(--qq-blue-050) !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-diff-card
+  .thread-diff-virtualized
+  > span
+  > button:hover {
+  color: var(--qq-blue-900) !important;
+  background: var(--qq-blue-100) !important;
+}
+
+html.codex-native2007 main.main-surface .qq2007-forum-actions {
+  min-height: 28px !important;
+  height: 28px !important;
+  margin: 0 !important;
+  padding: 3px 6px !important;
+  gap: 3px !important;
+  color: var(--qq-muted) !important;
+  border-top: 1px solid var(--qq-line-soft) !important;
+  background: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-actions
+  :is([class*="opacity-0"], [class*="group-hover:opacity-100"]) {
+  opacity: 1 !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-actions
+  > div:first-child {
+  height: 100% !important;
+  gap: 1px !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-actions
+  button[data-qq2007-forum-label] {
+  min-width: 0 !important;
+  height: 21px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 3px !important;
+  padding: 0 5px !important;
+  color: #315b7d !important;
+  font: 500 11px/19px Tahoma, "Microsoft YaHei UI", sans-serif !important;
+  border: 1px solid transparent !important;
+  border-radius: 2px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-actions
+  button[data-qq2007-forum-label]::after {
+  content: attr(data-qq2007-forum-label);
+  white-space: nowrap;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-actions
+  button[data-qq2007-forum-label]
+  svg {
+  width: 13px !important;
+  height: 13px !important;
+  color: var(--qq-blue-900) !important;
+  stroke-width: 1.7;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-forum-actions
+  button[data-qq2007-forum-label]:is(:hover, :focus-visible, [aria-pressed="true"]) {
+  color: var(--qq-blue-900) !important;
+  border-color: var(--qq-line-soft) !important;
+  background:
+    linear-gradient(180deg, #ffffff, var(--qq-blue-100)) !important;
+  box-shadow: inset 0 1px #ffffff !important;
+}
+
+html.codex-native2007 main.main-surface .qq2007-forum-time {
+  height: 100% !important;
+  margin-left: auto !important;
+  padding-right: 2px;
+  color: var(--qq-muted) !important;
+  font: 500 11px/20px Tahoma, "Microsoft YaHei UI", sans-serif !important;
+  opacity: 1 !important;
+}
+
+html.codex-native2007 main.main-surface .qq2007-forum-time::before {
+  content: "发表于 ";
+}
+
+/* Tool activity is presented as an early-forum system record, not a timeline. */
+html.codex-native2007 main.main-surface .qq2007-system-row {
+  min-height: 25px !important;
+  max-width: 100% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  margin: 2px 0 !important;
+  padding: 3px 7px 3px 4px !important;
+  color: var(--qq-muted) !important;
+  font: 500 11px/17px Tahoma, "Microsoft YaHei UI", sans-serif !important;
+  text-align: left !important;
+  border: 1px solid var(--qq-line-soft) !important;
+  border-radius: 2px !important;
+  background:
+    linear-gradient(180deg, #ffffff, var(--qq-blue-050)) !important;
+  box-shadow:
+    inset 0 1px #ffffff,
+    0 1px rgb(255 255 255 / .75) !important;
+}
+
+html.codex-native2007 main.main-surface .qq2007-system-row::before {
+  height: 17px;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  content: "系统";
+  padding: 0 4px;
+  color: #ffffff;
+  font: 700 10px/15px "QQ2007 UI", Tahoma, sans-serif;
+  text-shadow: 0 1px var(--qq-blue-950);
+  border: 1px solid var(--qq-blue-900);
+  border-radius: 2px;
+  background:
+    linear-gradient(180deg, var(--qq-blue-600), var(--qq-blue-800));
+  box-shadow:
+    inset 0 1px rgb(255 255 255 / .42),
+    0 1px #ffffff;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-system-row
+  > button.absolute {
+  z-index: 2;
+  border-radius: 2px !important;
+  background: transparent !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-system-row
+  > span {
+  gap: 4px !important;
+  color: var(--qq-muted) !important;
+  font-size: 11px !important;
+  line-height: 17px !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-system-row
+  :is(svg, [class*="icon-"]) {
+  width: 14px !important;
+  height: 14px !important;
+  flex: none;
+  color: var(--qq-blue-900) !important;
+  stroke-width: 1.7;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-system-row:is(:hover, :focus-within) {
+  color: var(--qq-ink) !important;
+  border-color: var(--qq-line) !important;
+  background:
+    linear-gradient(180deg, #ffffff, var(--qq-blue-100)) !important;
+}
+
+html.codex-native2007 main.main-surface .qq2007-system-reconnect {
+  color: #755a18 !important;
+  border-color: #d4b75f !important;
+  background: linear-gradient(180deg, #fffdf4, #fff5c9) !important;
+}
+
+html.codex-native2007 main.main-surface .qq2007-system-reconnect::before {
+  content: "连接";
+  color: #5d4300;
+  text-shadow: 0 1px rgb(255 255 255 / .72);
+  border-color: #c39b31;
+  background: linear-gradient(180deg, #ffe78c, #e6b936);
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-system-reconnect
+  :is(svg, [class*="icon-"]) {
+  color: #9a7414 !important;
+}
+
+/* Run summaries become text-only BBS section headings, not another chrome bar. */
+html.codex-native2007 main.main-surface .qq2007-work-heading {
+  width: 100% !important;
+  min-height: 27px !important;
+  margin: 4px 0 0 !important;
+  color: var(--qq-ink) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+html.codex-native2007 main.main-surface .qq2007-work-summary-button {
+  width: 100% !important;
+  min-height: 26px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 0 3px !important;
+  color: var(--qq-ink) !important;
+  text-align: left !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-work-summary-button::before,
+html.codex-native2007 main.main-surface
+  .qq2007-work-live::before {
+  min-height: 20px;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  content: "╭─〔 本帖处理记录 〕";
+  padding: 0;
+  color: var(--qq-blue-900);
+  font: 700 12px/20px "QQ2007 UI", Tahoma, "Microsoft YaHei UI", sans-serif;
+  letter-spacing: .02em;
+  background: none;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-work-summary-button
+  > span {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+html.codex-native2007 main.main-surface .qq2007-work-duration {
+  color: transparent !important;
+  font-size: 0 !important;
+  white-space: nowrap;
+}
+
+html.codex-native2007 main.main-surface .qq2007-work-duration::after {
+  content: attr(data-qq2007-work-duration);
+  color: var(--qq-muted);
+  font: 500 11px/18px Tahoma, "Microsoft YaHei UI", sans-serif;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-work-summary-button
+  :is(svg, [class*="icon-"]) {
+  width: 13px !important;
+  height: 13px !important;
+  flex: none;
+  color: var(--qq-blue-800) !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-work-summary-button:is(:hover, :focus-visible) {
+  background: transparent !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-work-summary-button:is(:hover, :focus-visible)::before {
+  color: var(--qq-blue-700);
+  text-shadow: 0 1px #ffffff;
+}
+
+html.codex-native2007 main.main-surface .qq2007-work-live {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-bottom: 8px !important;
+  padding: 3px 3px 4px !important;
+  border-bottom: 1px solid var(--qq-line-soft) !important;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-work-live
+  > .qq2007-work-duration {
+  margin-left: auto;
+}
+
+html.codex-native2007 main.main-surface
+  .qq2007-work-live
+  > [class~="border-t"] {
+  display: none !important;
+}
+
+html.codex-native2007 main.main-surface
+  [class~="bg-token-foreground/5"][class~="rounded-2xl"] {
+  color: #17334e !important;
+  border: 1px solid #b2cee5 !important;
+  border-radius: 4px !important;
+  background: linear-gradient(180deg, #f7fcff, #e8f4fc) !important;
+  box-shadow: inset 0 1px #ffffff !important;
+}
+
+html.codex-native2007 main.main-surface .qq2007-user-message {
+  padding-right: 47px !important;
+}
+
+html.codex-native2007 main.main-surface .qq2007-user-bubble {
+  position: relative !important;
+  overflow: visible !important;
+  color: #24384b !important;
+  border: 1px solid var(--qq-user-line) !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  box-shadow:
+    inset 0 1px #ffffff,
+    0 1px 2px rgb(38 57 74 / .12) !important;
+}
+
+html.codex-native2007 main.main-surface .qq2007-user-bubble::before {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -5px;
+  width: 8px;
+  height: 8px;
+  content: "";
+  border-top: 1px solid var(--qq-user-line);
+  border-right: 1px solid var(--qq-user-line);
+  background: #ffffff;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+html.codex-native2007 main.main-surface .qq2007-user-bubble::after {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: -43px;
+  width: 36px;
+  height: 36px;
+  display: block;
+  content: "";
+  border: 1px solid var(--qq-user-line);
+  border-radius: 2px;
+  background:
+    #ffffff var(--qq2007-user-avatar) center / 33px 33px no-repeat;
+  box-shadow:
+    inset 0 1px #ffffff,
+    0 1px 2px rgb(23 71 108 / .16);
+  transform: translateY(-50%);
+}
+
+html.codex-native2007 main.main-surface :is(pre, [class*="codeBlock"]) {
+  color: #15324c !important;
+  border: 1px solid #79a4ca !important;
+  border-radius: 4px !important;
+  background: #f2f9fe !important;
+  box-shadow: inset 0 1px #ffffff !important;
+}
+
+html.codex-native2007 main.main-surface code:not(pre code) {
+  color: #174a72 !important;
+  border: 1px solid #c2dced;
+  border-radius: 3px;
+  background: #edf7fd !important;
+  box-shadow: inset 0 1px #ffffff;
+}
+
+html.codex-native2007 main.main-surface
+  :is(ul, ol) > li::marker {
+  color: #287fc4;
+  font-weight: 700;
+}
+
+html.codex-native2007 main.main-surface blockquote {
+  position: relative;
+  margin: .7em 0 !important;
+  padding: .55em .8em .58em 2.85em !important;
+  color: #294d6c !important;
+  border: 1px solid var(--qq-line) !important;
+  border-inline-start: 1px solid var(--qq-line) !important;
+  border-radius: 2px !important;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0,
+      var(--qq-blue-050) 22%,
+      var(--qq-blue-100) 100%
+    ) !important;
+  box-shadow:
+    inset 1px 1px #ffffff,
+    inset -1px -1px rgb(71 126 169 / .12),
+    0 1px #ffffff !important;
+}
+
+html.codex-native2007 main.main-surface blockquote::before {
+  position: absolute !important;
+  top: 50% !important;
+  bottom: auto !important;
+  left: .58em !important;
+  width: 17px !important;
+  height: 17px !important;
+  display: block !important;
+  content: ">" !important;
+  color: var(--qq-blue-900) !important;
+  font: 700 12px/15px "QQ2007 UI", Tahoma, sans-serif !important;
+  text-align: center !important;
+  text-shadow: 0 1px #ffffff !important;
+  border: 1px solid var(--qq-line) !important;
+  border-radius: 2px !important;
+  background:
+    linear-gradient(180deg, #ffffff, var(--qq-blue-100)) !important;
+  box-shadow:
+    inset 0 1px #ffffff,
+    0 1px #ffffff !important;
+  transform: translateY(-50%) !important;
+  filter: none;
+}
+
+html.codex-native2007 main.main-surface blockquote::after {
+  position: absolute !important;
+  top: 5px !important;
+  bottom: 5px !important;
+  left: 30px !important;
+  width: 1px !important;
+  height: auto !important;
+  display: block !important;
+  content: "" !important;
+  border: 0 !important;
+  background:
+    repeating-linear-gradient(
+      180deg,
+      var(--qq-line-soft) 0 2px,
+      transparent 2px 4px
+    ) !important;
+}
+
+html.codex-native2007 main.main-surface blockquote > :first-child {
+  margin-top: 0 !important;
+}
+
+html.codex-native2007 main.main-surface blockquote > :last-child {
+  margin-bottom: 0 !important;
+}
+
+html.codex-native2007 main.main-surface
+  :is(h1, h2, h3, h4) {
+  color: #143d63 !important;
+}
+
+html.codex-native2007 main.main-surface
+  :is(table, th, td) {
+  border-color: #a9c9e2 !important;
+}
+
+html.codex-native2007 main.main-surface th {
+  color: #214e74 !important;
+  background: #e1f0fa !important;
+}
+
+html.codex-native2007 main.main-surface hr {
+  border-color: #bfd7e9 !important;
+}
+
+html.codex-native2007 main.main-surface a {
+  color: #176fb8 !important;
+}
+
+/* Native composer with a compact, requested usage shortcut. */
+html.codex-native2007 .composer-surface-chrome {
+  color: #17324c !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  box-shadow:
+    inset 0 0 0 1px #ffffff,
+    0 0 0 1px #9fc2dc,
+    0 1px 4px rgb(20 76 122 / .22) !important;
+  transition: none !important;
+}
+
+html.codex-native2007 .qq2007-composer-empty-attachments {
+  display: none !important;
+}
+
+html.codex-native2007 .qq2007-composer-footer {
+  margin-bottom: 0 !important;
+  padding: 7px 8px 8px !important;
+  row-gap: 7px !important;
+  column-gap: 8px !important;
+  background:
+    linear-gradient(180deg, #edf7fd 0, #dceefa 100%) !important;
+  box-shadow:
+    inset 0 -1px #ffffff,
+    inset 0 1px rgb(255 255 255 / .65) !important;
+}
+
+html.codex-native2007 .qq2007-composer-editor {
+  color: #17324c !important;
+  margin-inline: 0 !important;
+  border: 1px solid #91b7d4 !important;
+  border-radius: 3px !important;
+  background:
+    linear-gradient(180deg, #ffffff 0, #f7fbfe 100%) !important;
+  box-shadow:
+    inset 0 1px 2px rgb(36 91 132 / .08),
+    0 1px #ffffff !important;
+}
+
+html.codex-native2007
+  .qq2007-composer-tools
+  > :is(.flex, [class*="flex"]) {
+  gap: 6px !important;
+}
+
+html.codex-native2007 .qq2007-composer-left-tools,
+html.codex-native2007 .qq2007-composer-right-tools {
+  align-self: center !important;
+}
+
+html.codex-native2007 .qq2007-usage-button {
+  display: inline-flex;
+  flex: none;
+  height: 28px;
+  align-items: center;
+  gap: 5px;
+  padding: 0 7px;
+  color: #315b7d !important;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+  border: 1px solid #b2cde2 !important;
+  border-radius: 3px !important;
+  background: linear-gradient(180deg, #ffffff, #e8f3fb) !important;
+  box-shadow: inset 0 1px #ffffff !important;
+}
+
+html.codex-native2007 .qq2007-usage-gauge {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  flex: none;
+  border: 1px solid #568db8;
+  border-radius: 50%;
+  background:
+    conic-gradient(
+      #2d83c6 var(--qq2007-usage-percent),
+      #d4e8f6 0
+    );
+  box-shadow: inset 0 0 0 1px #ffffff;
+}
+
+html.codex-native2007 .qq2007-usage-gauge::after {
+  position: absolute;
+  inset: 3px;
+  content: "";
+  border-radius: 50%;
+  background: #f8fcff;
+}
+
+html.qq2007-usage-capturing
+  [data-radix-popper-content-wrapper]:has([role="menu"]) {
+  opacity: 0 !important;
+  transform: translate3d(-10000px, -10000px, 0) !important;
+  pointer-events: none !important;
+}
+
+html.codex-native2007 .qq2007-usage-popover {
+  position: fixed;
+  z-index: 90;
+  width: 218px;
+  padding: 8px;
+  color: #17324c;
+  font-size: 13px;
+  border: 1px solid #78a8ce;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #f8fcff 0, #e4f2fb 100%);
+  box-shadow:
+    inset 0 0 0 1px #ffffff,
+    0 4px 14px rgb(17 70 112 / .24);
+}
+
+html.codex-native2007 .qq2007-usage-popover[hidden] {
+  display: none !important;
+}
+
+html.codex-native2007 .qq2007-usage-heading {
+  margin: -8px -8px 8px;
+  padding: 6px 8px;
+  color: #214e74;
+  font-weight: 600;
+  border-bottom: 1px solid #9dc1dc;
+  background: linear-gradient(180deg, #f7fcff, #d9edf9);
+  box-shadow: inset 0 1px #ffffff;
+}
+
+html.codex-native2007 .qq2007-usage-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 1px 2px 6px;
+}
+
+html.codex-native2007 .qq2007-usage-number {
+  color: #176fb8;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+html.codex-native2007 .qq2007-usage-meter {
+  height: 7px;
+  overflow: hidden;
+  border: 1px solid #96b9d6;
+  border-radius: 2px;
+  background: #ffffff;
+  box-shadow: inset 0 1px 2px rgb(27 83 126 / .12);
+}
+
+html.codex-native2007 .qq2007-usage-meter-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(180deg, #69b5e5, #247ec0);
+  transition: width 180ms ease-out;
+}
+
+html.codex-native2007 .qq2007-usage-reset {
+  padding: 6px 2px 0;
+  color: #607f99;
+  font-size: 11px;
+  text-align: right;
+}
+
+html.codex-native2007 .qq2007-composer-footer
+  [data-composer-navigation-target] {
+  color: #315b7d !important;
+  border: 1px solid transparent !important;
+  border-radius: 3px !important;
+}
+
+html.codex-native2007 .qq2007-composer-footer
+  :is(
+    [data-composer-navigation-target="permissions"],
+    [data-composer-navigation-target="reasoning"]
+  ) {
+  border-color: #b2cde2 !important;
+  background: linear-gradient(180deg, #ffffff, #e8f3fb) !important;
+  box-shadow: inset 0 1px #ffffff !important;
+}
+
+html.codex-native2007 .qq2007-composer-footer
+  :is(button, [role="button"]):hover {
+  border-color: #78a9cf !important;
+  background: linear-gradient(180deg, #ffffff, #d8ecfa) !important;
+}
+
+html.codex-native2007 .qq2007-composer-footer
+  :is(button, [role="button"]):active {
+  transform: translateY(1px);
+  background: linear-gradient(180deg, #cde5f6, #edf7fd) !important;
+  box-shadow:
+    inset 0 1px 2px rgb(18 77 124 / .2),
+    inset 0 -1px #ffffff !important;
+}
+
+html.codex-native2007 .composer-surface-chrome:focus-within {
+  border-color: #9fc2dc !important;
+  box-shadow:
+    inset 0 0 0 1px #ffffff,
+    0 0 0 1px #9fc2dc,
+    0 1px 4px rgb(20 76 122 / .22) !important;
+}
+
+html.codex-native2007 .composer-surface-chrome .ProseMirror {
+  color: #17324c !important;
+}
+
+html.codex-native2007 .composer-surface-chrome button {
+  border-radius: 3px !important;
+}
+
+html.codex-native2007 .composer-surface-chrome button:hover {
+  background: #dceefa !important;
+}
+
+html.codex-native2007 .composer-surface-chrome button[class~="bg-token-foreground"] {
+  color: #ffffff !important;
+  border: 1px solid #0d5a9e !important;
+  border-radius: 4px !important;
+  background: linear-gradient(#55a2db, #176eb8) !important;
+  box-shadow:
+    inset 0 1px rgb(255 255 255 / .45),
+    0 1px 1px rgb(11 72 120 / .18) !important;
+}
+
+/* Home screen keeps Codex's layout, only gains classic material styling. */
+html.codex-native2007 .dream-home {
+  background:
+    linear-gradient(180deg, #fbfdff 0, #f4faff 100%) !important;
+}
+
+html.codex-native2007 .dream-home [data-testid="home-icon"] {
+  color: #4e7da4 !important;
+}
+
+html.codex-native2007 .dream-home .group\/home-suggestions button {
+  color: #183a58 !important;
+  border: 1px solid #96b9d6 !important;
+  border-radius: 4px !important;
+  background: linear-gradient(#ffffff, #e7f3fb) !important;
+  box-shadow: inset 0 1px #ffffff !important;
+}
+
+html.codex-native2007 .dream-home .group\/home-suggestions button:hover {
+  border-color: #568fc0 !important;
+  background: linear-gradient(#ffffff, #d4eafa) !important;
+}
+
+/* Native menus, dialogs, tool picker, settings, and side chat stay native-sized. */
+html.codex-native2007
+  :is([role="menu"], [role="listbox"], [role="dialog"], [data-radix-popper-content-wrapper]) {
+  font-family: var(--font-sans) !important;
+}
+
+html.codex-native2007 :is([role="menu"], [role="listbox"], [role="dialog"]) {
+  color: #17324c !important;
+  border-color: #5c8fbb !important;
+  border-radius: 5px !important;
+  background: #f8fcff !important;
+  box-shadow:
+    inset 0 1px #ffffff,
+    0 6px 18px rgb(10 56 95 / .25) !important;
+}
+
+html.codex-native2007
+  :is([role="menuitem"], [role="option"], [role="tab"], [data-composer-navigation-target]) {
+  border-radius: 3px !important;
+}
+
+html.codex-native2007
+  :is([role="menuitem"], [role="option"], [role="tab"], [data-composer-navigation-target]):hover {
+  background: #dceefa !important;
+}
+
+html.codex-native2007 :is(input, textarea) {
+  color: #17324c !important;
+  border-color: #79a6cb !important;
+  border-radius: 3px !important;
+  background: #ffffff !important;
+}
+
+html.codex-native2007 :is(input, textarea):focus {
+  outline: 1px solid #176fb8 !important;
+  outline-offset: 0;
+}
+
+html.codex-native2007 button:focus-visible,
+html.codex-native2007 [role="button"]:focus-visible {
+  outline: 1px solid #176fb8 !important;
+  outline-offset: 1px !important;
+}
+
+/* Compact title-bar palette picker. It sits beside Codex's native controls. */
+html.codex-native2007 .qq2007-palette-button {
+  position: fixed;
+  z-index: 2147481001;
+  top: 8.5px;
+  right: 76px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  padding: 4px;
+  color: #ffffff !important;
+  border: 1px solid transparent !important;
+  border-radius: 3px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+  user-select: none;
+}
+
+html.codex-native2007 .qq2007-palette-button:hover,
+html.codex-native2007 .qq2007-palette-button:focus-visible,
+html.codex-native2007 .qq2007-palette-button[aria-expanded="true"] {
+  border-color: rgb(255 255 255 / .68) !important;
+  background: rgb(255 255 255 / .2) !important;
+  box-shadow:
+    inset 0 1px rgb(255 255 255 / .22),
+    0 1px rgb(0 45 86 / .16) !important;
+}
+
+html.codex-native2007 .qq2007-palette-grid {
+  width: 16px;
+  height: 16px;
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  padding: 1px;
+  border: 1px solid rgb(255 255 255 / .72);
+  border-radius: 3px;
+  background: rgb(255 255 255 / .88);
+  box-shadow: 0 1px rgb(0 41 78 / .18);
+}
+
+html.codex-native2007 .qq2007-palette-grid i {
+  display: block;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 1px;
+}
+
+html.codex-native2007 .qq2007-palette-popover {
+  position: fixed;
+  z-index: 2147481002;
+  top: 39px;
+  right: 72px;
+  width: 158px;
+  overflow: hidden;
+  padding: 2px;
+  color: var(--qq-ink) !important;
+  font: 12px/1.2 var(--font-sans) !important;
+  border: 1px solid var(--qq-line) !important;
+  border-radius: 4px !important;
+  background: var(--qq-white) !important;
+  box-shadow:
+    inset 0 0 0 1px #ffffff,
+    0 5px 15px rgb(16 58 91 / .26) !important;
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+}
+
+html.codex-native2007 .qq2007-palette-popover[hidden] {
+  display: none !important;
+}
+
+html.codex-native2007 .qq2007-palette-heading {
+  margin: -2px -2px 2px;
+  padding: 6px 8px;
+  color: #ffffff;
+  font-weight: 700;
+  border-bottom: 1px solid var(--qq-line);
+  background:
+    linear-gradient(
+      180deg,
+      var(--qq-blue-600),
+      var(--qq-blue-800)
+    );
+  text-shadow: 0 1px var(--qq-blue-950);
+}
+
+html.codex-native2007 .qq2007-palette-option {
+  width: 100%;
+  min-height: 30px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 24px 1fr 15px;
+  gap: 6px;
+  padding: 3px 6px;
+  color: var(--qq-ink) !important;
+  text-align: left;
+  border: 1px solid transparent !important;
+  border-radius: 2px !important;
+  background: transparent !important;
+  text-shadow: none !important;
+}
+
+html.codex-native2007 .qq2007-palette-option:hover,
+html.codex-native2007 .qq2007-palette-option.is-selected {
+  border-color: var(--qq-line-soft) !important;
+  background:
+    linear-gradient(180deg, #ffffff, var(--qq-blue-100)) !important;
+}
+
+html.codex-native2007 .qq2007-palette-swatch {
+  width: 22px;
+  height: 16px;
+  border: 1px solid rgb(36 61 82 / .34);
+  border-radius: 3px;
+  box-shadow:
+    inset 0 1px rgb(255 255 255 / .62),
+    0 1px #ffffff;
+}
+
+html.codex-native2007 .qq2007-palette-check {
+  color: var(--qq-blue-800);
+  font-weight: 700;
+  opacity: 0;
+}
+
+html.codex-native2007 .qq2007-palette-option.is-selected
+  .qq2007-palette-check {
+  opacity: 1;
+}
+
+/* Alternate palettes share one material system, so every native surface shifts
+   together while pixel artwork keeps its original colors. */
+:root.codex-native2007[data-qq2007-palette="pink"] {
+  --qq-theme-h: 333;
+  --qq-theme-ink-h: 334;
+  --qq-accent: #d9a42f;
+  --qq-accent-strong: #946118;
+  --qq-accent-soft: #ffefbd;
+  --qq-surface-tint: #fff9e9;
+  --qq-alt-tint: #eaf6ef;
+  --qq-user-line: #d783a7;
+}
+
+:root.codex-native2007[data-qq2007-palette="violet"] {
+  --qq-theme-h: 267;
+  --qq-theme-ink-h: 268;
+  --qq-accent: #35a7ad;
+  --qq-accent-strong: #176d76;
+  --qq-accent-soft: #d9f3f2;
+  --qq-surface-tint: #faf7ff;
+  --qq-alt-tint: #e8f7f4;
+  --qq-user-line: #9580cc;
+}
+
+:root.codex-native2007[data-qq2007-palette="mint"] {
+  --qq-theme-h: 174;
+  --qq-theme-ink-h: 184;
+  --qq-accent: #e38b2e;
+  --qq-accent-strong: #a95818;
+  --qq-accent-soft: #ffedc9;
+  --qq-surface-tint: #fffaf0;
+  --qq-alt-tint: #e4f6f2;
+  --qq-user-line: #54a79f;
+}
+
+:root.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) {
+  --qq-blue-950: hsl(var(--qq-theme-h) 55% 25%);
+  --qq-blue-900: hsl(var(--qq-theme-h) 58% 34%);
+  --qq-blue-800: hsl(var(--qq-theme-h) 59% 43%);
+  --qq-blue-700: hsl(var(--qq-theme-h) 57% 52%);
+  --qq-blue-600: hsl(var(--qq-theme-h) 60% 63%);
+  --qq-blue-400: hsl(var(--qq-theme-h) 55% 74%);
+  --qq-blue-300: hsl(var(--qq-theme-h) 55% 83%);
+  --qq-blue-200: hsl(var(--qq-theme-h) 62% 90%);
+  --qq-blue-100: hsl(var(--qq-theme-h) 70% 95%);
+  --qq-blue-050: hsl(var(--qq-theme-h) 75% 98%);
+  --qq-ink: hsl(var(--qq-theme-ink-h) 37% 23%);
+  --qq-muted: hsl(var(--qq-theme-ink-h) 24% 47%);
+  --qq-line: hsl(var(--qq-theme-h) 38% 57%);
+  --qq-line-soft: hsl(var(--qq-theme-h) 42% 78%);
+  --qq-white: hsl(var(--qq-theme-h) 74% 99%);
+  --qq-focus: hsl(var(--qq-theme-h) 60% 45%);
+
+  --color-token-bg-primary: hsl(var(--qq-theme-h) 56% 91%);
+  --color-token-bg-secondary: hsl(var(--qq-theme-h) 68% 96%);
+  --color-token-bg-tertiary: hsl(var(--qq-theme-h) 54% 91%);
+  --color-token-bg-fog: hsl(var(--qq-theme-h) 52% 43% / .08);
+  --color-token-bg-appshot: hsl(var(--qq-theme-h) 53% 90%);
+  --color-token-main-surface-primary: var(--qq-white);
+  --color-token-side-bar-background: hsl(var(--qq-theme-h) 68% 97%);
+  --color-token-foreground: var(--qq-ink);
+  --color-token-text-primary: var(--qq-ink);
+  --color-token-text-secondary: hsl(var(--qq-theme-ink-h) 27% 40%);
+  --color-token-text-tertiary: hsl(var(--qq-theme-ink-h) 19% 52%);
+  --color-token-description-foreground: hsl(var(--qq-theme-ink-h) 19% 52%);
+  --color-token-icon-foreground: hsl(var(--qq-theme-ink-h) 38% 31%);
+  --color-token-border: hsl(var(--qq-theme-h) 39% 75%);
+  --color-token-border-default: hsl(var(--qq-theme-h) 39% 75%);
+  --color-token-border-light: hsl(var(--qq-theme-h) 48% 88%);
+  --color-token-border-heavy: hsl(var(--qq-theme-h) 39% 57%);
+  --color-token-input-border: hsl(var(--qq-theme-h) 38% 66%);
+  --color-token-input-background: #ffffff;
+  --color-token-input-foreground: var(--qq-ink);
+  --color-token-input-placeholder-foreground:
+    hsl(var(--qq-theme-ink-h) 15% 61%);
+  --color-token-button-background: hsl(var(--qq-theme-h) 60% 48%);
+  --color-token-button-border: hsl(var(--qq-theme-h) 39% 57%);
+  --color-token-button-secondary-hover-background:
+    hsl(var(--qq-theme-h) 65% 92%);
+  --color-token-toolbar-hover-background: hsl(var(--qq-theme-h) 65% 92%);
+  --color-token-list-hover-background: hsl(var(--qq-theme-h) 68% 94%);
+  --color-token-list-active-selection-background:
+    hsl(var(--qq-theme-h) 63% 89%);
+  --color-token-list-active-selection-foreground:
+    hsl(var(--qq-theme-ink-h) 50% 28%);
+  --color-token-list-active-selection-icon-foreground:
+    hsl(var(--qq-theme-h) 57% 38%);
+  --color-token-list-focus-outline: var(--qq-focus);
+  --color-token-focus-border: var(--qq-focus);
+  --color-token-primary: hsl(var(--qq-theme-h) 61% 47%);
+  --color-token-link: hsl(var(--qq-theme-h) 62% 43%);
+  --color-token-text-link-foreground: hsl(var(--qq-theme-h) 62% 43%);
+  --color-token-text-link-active-foreground: hsl(var(--qq-theme-h) 58% 34%);
+  --color-token-menu-background: hsl(var(--qq-theme-h) 72% 99%);
+  --color-token-menu-border: hsl(var(--qq-theme-h) 39% 56%);
+  --color-token-dropdown-background: hsl(var(--qq-theme-h) 72% 99%);
+  --color-token-dropdown-foreground: var(--qq-ink);
+  --color-token-badge-background: hsl(var(--qq-theme-h) 66% 93%);
+  --color-token-badge-foreground: hsl(var(--qq-theme-ink-h) 44% 34%);
+  --color-token-editor-background: var(--qq-white);
+  --color-token-editor-foreground: var(--qq-ink);
+  --color-token-editor-widget-background: hsl(var(--qq-theme-h) 72% 99%);
+  --color-token-editor-selection-background: hsl(var(--qq-theme-h) 68% 91%);
+  --color-token-terminal-background: hsl(var(--qq-theme-h) 70% 98%);
+  --color-token-terminal-foreground: var(--qq-ink);
+  --color-token-terminal-border: hsl(var(--qq-theme-h) 38% 70%);
+  --color-token-text-preformat-background: hsl(var(--qq-theme-h) 68% 97%);
+  --color-token-text-preformat-foreground: var(--qq-ink);
+  --color-token-text-code-block-background: hsl(var(--qq-theme-h) 68% 97%);
+  --color-token-scrollbar-slider-background:
+    hsl(var(--qq-theme-h) 52% 50% / .28);
+  --color-token-scrollbar-slider-hover-background:
+    hsl(var(--qq-theme-h) 56% 43% / .42);
+  --color-token-scrollbar-slider-active-background:
+    hsl(var(--qq-theme-h) 58% 34% / .52);
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+),
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) body {
+  color: var(--qq-ink) !important;
+  background: var(--qq-blue-700) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) * {
+  scrollbar-color: var(--qq-blue-400) var(--qq-blue-100);
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) *::-webkit-scrollbar-track {
+  border-left-color: var(--qq-blue-200);
+  background: var(--qq-blue-100);
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) *::-webkit-scrollbar-thumb {
+  border-color: var(--qq-blue-100);
+  background: linear-gradient(90deg, var(--qq-blue-300), var(--qq-blue-600));
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) ::selection {
+  color: var(--qq-ink);
+  background: var(--qq-blue-200);
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) #codex-native2007-chrome {
+  border-color: var(--qq-blue-900);
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) :is(
+  [class~="group/application-menu-top-bar"],
+  main.main-surface > header.app-header-tint
+) {
+  border-bottom-color: var(--qq-blue-950) !important;
+  background:
+    linear-gradient(
+      180deg,
+      var(--qq-blue-400) 0,
+      var(--qq-blue-700) 48%,
+      var(--qq-blue-900) 100%
+    ) !important;
+  box-shadow:
+    inset 0 1px rgb(255 255 255 / .58),
+    inset 0 -1px rgb(30 8 22 / .22),
+    0 1px 2px rgb(40 12 28 / .2) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) :is(
+  [class~="group/application-menu-top-bar"] *,
+  main.main-surface > header.app-header-tint *
+) {
+  text-shadow: 0 1px var(--qq-blue-950);
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-workspace-shell {
+  background:
+    linear-gradient(
+      180deg,
+      var(--qq-blue-200) 0,
+      var(--qq-blue-300) 55%,
+      var(--qq-blue-400) 100%
+    ) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-workspace-shell
+  > aside.app-shell-left-panel
+  > .group.absolute::before {
+  background:
+    linear-gradient(
+      180deg,
+      var(--qq-blue-200) 0,
+      var(--qq-blue-300) 55%,
+      var(--qq-blue-400) 100%
+    );
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) aside.app-shell-left-panel,
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-workspace-shell > aside.app-shell-left-panel {
+  border-color: var(--qq-line) !important;
+  background:
+    linear-gradient(
+      90deg,
+      var(--qq-white) 0,
+      var(--qq-blue-050) 72%,
+      var(--qq-blue-100) 100%
+    ) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-workspace-shell > main.main-surface {
+  border-color: var(--qq-line) !important;
+  background: var(--qq-white) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) aside.app-shell-left-panel
+  :is(button, [role="button"]):hover {
+  border-color: var(--qq-line-soft) !important;
+  background: linear-gradient(#ffffff, var(--qq-blue-100)) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) aside.app-shell-left-panel
+  :is([aria-current="page"], [aria-selected="true"], [data-state="active"]) {
+  color: var(--qq-ink) !important;
+  border-color: var(--qq-line) !important;
+  background: linear-gradient(var(--qq-blue-200), var(--qq-blue-050)) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) aside.app-shell-left-panel [class~="group/nav-section-title"] {
+  color: var(--qq-blue-900) !important;
+  border-top-color: var(--qq-blue-300) !important;
+  border-bottom-color: var(--qq-blue-400) !important;
+  background:
+    linear-gradient(
+      180deg,
+      var(--qq-blue-050) 0,
+      var(--qq-blue-100) 48%,
+      var(--qq-blue-200) 100%
+    ) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) aside.app-shell-left-panel
+  :is(
+    [data-app-action-sidebar-section-toggle],
+    h2,
+    h3,
+    [class*="section-label"],
+    [class*="group-label"]
+  ) {
+  color: var(--qq-blue-900) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) aside.app-shell-left-panel
+  button[aria-label="Open profile menu"]:is(
+    :hover,
+    :focus-visible,
+    [data-state="open"],
+    [aria-expanded="true"]
+  ) {
+  border-color: var(--qq-line-soft) !important;
+  background: linear-gradient(#ffffff, var(--qq-blue-100)) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) :is(
+  main.main-surface,
+  .app-shell-main-content-frame,
+  [role="main"]
+) {
+  color: var(--qq-ink) !important;
+  background: var(--qq-white) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) main.main-surface
+  :is([data-message-author-role], article, [class*="_markdownContent_"]) {
+  color: var(--qq-ink) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) main.main-surface
+  [class~="bg-token-foreground/5"][class~="rounded-2xl"] {
+  color: var(--qq-ink) !important;
+  border-color: var(--qq-line-soft) !important;
+  background:
+    linear-gradient(180deg, #ffffff, var(--qq-blue-100)) !important;
+  box-shadow:
+    inset 0 1px #ffffff,
+    0 1px 2px hsl(var(--qq-theme-h) 38% 34% / .1) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) main.main-surface
+  :is(pre, [class*="codeBlock"]) {
+  color: var(--qq-ink) !important;
+  border-color: var(--qq-line-soft) !important;
+  background: var(--qq-blue-050) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) main.main-surface blockquote {
+  color: var(--qq-ink) !important;
+  border-color: var(--qq-line) !important;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0,
+      var(--qq-blue-050) 22%,
+      var(--qq-blue-100) 100%
+    ) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) main.main-surface code:not(pre code) {
+  color: var(--qq-blue-900) !important;
+  border-color: var(--qq-line-soft);
+  background: var(--qq-blue-050) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) main.main-surface :is(h1, h2, h3, h4, a) {
+  color: var(--qq-blue-900) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .composer-surface-chrome {
+  color: var(--qq-ink) !important;
+  box-shadow:
+    inset 0 0 0 1px #ffffff,
+    0 0 0 1px var(--qq-line-soft),
+    0 1px 4px hsl(var(--qq-theme-h) 40% 30% / .2) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-composer-footer {
+  background:
+    linear-gradient(180deg, var(--qq-blue-050), var(--qq-blue-100)) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-composer-editor {
+  color: var(--qq-ink) !important;
+  border-color: var(--qq-line-soft) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) :is(
+  .qq2007-usage-button,
+  .qq2007-composer-footer
+    [data-composer-navigation-target="permissions"],
+  .qq2007-composer-footer
+    [data-composer-navigation-target="reasoning"]
+) {
+  color: var(--qq-ink) !important;
+  border-color: var(--qq-line-soft) !important;
+  background: linear-gradient(#ffffff, var(--qq-blue-100)) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-usage-gauge {
+  border-color: var(--qq-line);
+  background:
+    conic-gradient(
+      var(--qq-blue-700) var(--qq2007-usage-percent),
+      var(--qq-blue-200) 0
+    );
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-usage-gauge::after {
+  background: var(--qq-blue-050);
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-usage-popover {
+  color: var(--qq-ink);
+  border-color: var(--qq-line);
+  background:
+    linear-gradient(180deg, var(--qq-blue-050), var(--qq-blue-100));
+  box-shadow:
+    inset 0 0 0 1px #ffffff,
+    0 4px 14px hsl(var(--qq-theme-h) 42% 28% / .22);
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-usage-heading {
+  color: var(--qq-blue-950);
+  border-bottom-color: var(--qq-line-soft);
+  background:
+    linear-gradient(180deg, #ffffff, var(--qq-blue-200));
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-usage-number {
+  color: var(--qq-blue-900);
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-usage-meter {
+  border-color: var(--qq-line-soft);
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-usage-meter-fill {
+  background:
+    linear-gradient(180deg, var(--qq-blue-400), var(--qq-blue-800));
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-usage-reset {
+  color: var(--qq-muted);
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .composer-surface-chrome:focus-within {
+  border-color: var(--qq-line-soft) !important;
+  box-shadow:
+    inset 0 0 0 1px #ffffff,
+    0 0 0 1px var(--qq-line-soft),
+    0 1px 4px hsl(var(--qq-theme-h) 40% 30% / .2) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .composer-surface-chrome
+  button[class~="bg-token-foreground"] {
+  border-color: var(--qq-blue-950) !important;
+  background: linear-gradient(var(--qq-blue-600), var(--qq-blue-900)) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) :is([role="menu"], [role="listbox"], [role="dialog"]) {
+  color: var(--qq-ink) !important;
+  border-color: var(--qq-line) !important;
+  background: var(--qq-blue-050) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) :is(
+  [role="menuitem"],
+  [role="option"],
+  [role="tab"],
+  [data-composer-navigation-target]
+):hover {
+  background: var(--qq-blue-100) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) :is(input, textarea) {
+  color: var(--qq-ink) !important;
+  border-color: var(--qq-line-soft) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) :is(input, textarea):focus,
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) :is(button, [role="button"]):focus-visible {
+  outline-color: var(--qq-focus) !important;
+}
+
+/* Multi-colour forum palettes: quiet reading surfaces with playful chrome. */
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) :is(
+  [class~="group/application-menu-top-bar"],
+  main.main-surface > header.app-header-tint
+) {
+  background:
+    linear-gradient(
+      105deg,
+      var(--qq-blue-400) 0,
+      var(--qq-blue-700) 37%,
+      var(--qq-blue-900) 72%,
+      var(--qq-accent-strong) 100%
+    ) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-workspace-shell,
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-workspace-shell
+  > aside.app-shell-left-panel
+  > .group.absolute::before {
+  background:
+    linear-gradient(
+      180deg,
+      var(--qq-blue-200) 0,
+      var(--qq-blue-300) 58%,
+      var(--qq-accent-soft) 100%
+    ) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) aside.app-shell-left-panel,
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-workspace-shell > aside.app-shell-left-panel {
+  background:
+    linear-gradient(
+      105deg,
+      var(--qq-surface-tint) 0,
+      var(--qq-white) 48%,
+      var(--qq-blue-050) 78%,
+      var(--qq-accent-soft) 155%
+    ) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) aside.app-shell-left-panel [class~="group/nav-section-title"] {
+  border-bottom-color: var(--qq-accent) !important;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0,
+      var(--qq-blue-100) 58%,
+      var(--qq-accent-soft) 145%
+    ) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) :is(
+  main.main-surface,
+  .app-shell-main-content-frame,
+  [role="main"]
+) {
+  background:
+    linear-gradient(
+      90deg,
+      var(--qq-surface-tint) 0,
+      var(--qq-white) 8%,
+      var(--qq-white) 92%,
+      var(--qq-alt-tint) 100%
+    ) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) main.main-surface .qq2007-forum-post::before {
+  border-bottom-color: var(--qq-accent) !important;
+  background:
+    var(--qq2007-icon-quick-chat) 7px 50% / 18px 18px no-repeat,
+    linear-gradient(
+      100deg,
+      #ffffff 0,
+      var(--qq-blue-100) 72%,
+      var(--qq-accent-soft) 135%
+    ) !important;
+  box-shadow:
+    inset 4px 0 var(--qq-accent),
+    inset 0 1px #ffffff,
+    inset 0 -1px rgb(255 255 255 / .72) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) main.main-surface .qq2007-forum-actions {
+  background: transparent !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) main.main-surface
+  [class~="bg-token-foreground/5"][class~="rounded-2xl"] {
+  border-color: var(--qq-accent) !important;
+  background:
+    linear-gradient(
+      115deg,
+      #ffffff 0,
+      var(--qq-alt-tint) 70%,
+      var(--qq-accent-soft) 145%
+    ) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) main.main-surface
+  :is(.qq2007-forum-resource-card, .qq2007-forum-diff-card) {
+  border-left-color: var(--qq-accent) !important;
+  background:
+    linear-gradient(100deg, var(--qq-blue-050), var(--qq-surface-tint)) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) main.main-surface .qq2007-system-row::before {
+  border-color: var(--qq-accent-strong);
+  background:
+    linear-gradient(180deg, var(--qq-accent), var(--qq-accent-strong));
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-composer-footer {
+  background:
+    linear-gradient(
+      105deg,
+      var(--qq-surface-tint) 0,
+      var(--qq-blue-100) 65%,
+      var(--qq-accent-soft) 135%
+    ) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-usage-gauge {
+  border-color: var(--qq-accent-strong);
+  background:
+    conic-gradient(
+      var(--qq-accent) var(--qq2007-usage-percent),
+      var(--qq-blue-200) 0
+    );
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) .qq2007-usage-popover {
+  border-color: var(--qq-accent) !important;
+  background:
+    linear-gradient(120deg, var(--qq-surface-tint), var(--qq-blue-100)) !important;
+}
+
+/* User speech stays neutral across palettes so it never reads as an assistant post. */
+html.codex-native2007 main.main-surface
+  [class~="bg-token-foreground/5"][class~="rounded-2xl"].qq2007-user-bubble,
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) main.main-surface
+  [class~="bg-token-foreground/5"][class~="rounded-2xl"].qq2007-user-bubble {
+  color: #24384b !important;
+  border: 1px solid var(--qq-user-line) !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  box-shadow:
+    inset 0 1px #ffffff,
+    0 1px 2px rgb(38 57 74 / .12) !important;
+}
+
+html.codex-native2007:is(
+  [data-qq2007-palette="pink"],
+  [data-qq2007-palette="violet"],
+  [data-qq2007-palette="mint"]
+) main.main-surface .qq2007-user-bubble::before {
+  border-color: var(--qq-user-line);
+  background: #ffffff;
+}
+
+@media (max-width: 900px) {
+  :root.codex-native2007 {
+    --spacing-token-sidebar: clamp(220px, 235px, min(420px, calc(100vw - 300px)));
+  }
+
+  html.codex-native2007 .qq2007-palette-button {
+    right: 72px;
+  }
+
+  html.codex-native2007 .qq2007-palette-popover {
+    right: 68px;
+  }
+
+  html.codex-native2007 aside.app-shell-left-panel button,
+  html.codex-native2007 aside.app-shell-left-panel [role="button"] {
+    font-size: 11px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.codex-native2007 *,
+  html.codex-native2007 *::before,
+  html.codex-native2007 *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation: none !important;
+  }
+}

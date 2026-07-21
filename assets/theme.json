@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "codex-native-2007",
+  "name": "Codex Native 2007",
+  "brandSubtitle": "NATIVE CODEX, 2007 VISUALS",
+  "tagline": "保留全部原生结构，只改变视觉语言。",
+  "projectPrefix": "选择项目: ",
+  "projectLabel": "选择项目",
+  "statusText": "CODEX READY",
+  "quote": "NATIVE FIRST",
+  "appearance": "light",
+  "palette": {
+    "accent": "#2d7fce"
+  },
+  "art": {
+    "focusX": 0.5,
+    "focusY": 0.5,
+    "safeArea": "none",
+    "taskMode": "off"
+  }
+}

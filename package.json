@@ -1,0 +1,12 @@
+{
+  "name": "codex-native-2007",
+  "version": "1.11.6",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node --check scripts/injector.mjs && node --check scripts/image-metadata.mjs && node --check assets/renderer-native2007.js && node scripts/injector.mjs --self-test --port 9335 && node scripts/injector.mjs --check-payload --theme-dir assets"
+  }
+}
