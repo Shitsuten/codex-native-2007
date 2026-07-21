@@ -2,6 +2,7 @@
   const STATE_KEY = "__CODEX_NATIVE_2007_STATE__";
   const STYLE_ID = "codex-native2007-style";
   const CHROME_ID = "codex-native2007-chrome";
+  const COMPOSER_HOLD_ID = "qq2007-composer-hold";
   const USAGE_BUTTON_ID = "qq2007-usage-button";
   const USAGE_POPOVER_ID = "qq2007-usage-popover";
   const PALETTE_BUTTON_ID = "qq2007-palette-button";
@@ -25,6 +26,10 @@
   let usageCaptureTimer = null;
   let usageCaptureInFlight = false;
   let usageData = null;
+  let composerHoldTimer = null;
+  let heldComposerFooter = null;
+  let heldComposerEditor = null;
+  let composerHoldSawChange = false;
   const ICON_HOST_CLASSES = [
     "qq2007-icon-host",
     "qq2007-icon-new-task",
@@ -130,6 +135,7 @@
     document.getElementById(USAGE_POPOVER_ID)?.remove();
     document.getElementById(PALETTE_BUTTON_ID)?.remove();
     document.getElementById(PALETTE_POPOVER_ID)?.remove();
+    document.getElementById(COMPOSER_HOLD_ID)?.remove();
     document.documentElement?.removeAttribute("data-qq2007-palette");
     document.documentElement?.classList.remove("qq2007-usage-capturing");
   };
@@ -740,7 +746,10 @@
   };
 
   const decorateComposer = () => {
-    document.querySelectorAll(".composer-surface-chrome").forEach((surface) => {
+    const surfaces = document.querySelectorAll(
+      ".composer-surface-chrome:not(.qq2007-composer-hold)",
+    );
+    surfaces.forEach((surface) => {
       if (surface.classList.contains("qq2007-composer-shell")) {
         surface.classList.remove("qq2007-composer-shell");
         surface.style.removeProperty("border-color");
@@ -818,6 +827,93 @@
         updateUsageUI();
       }
     });
+  };
+
+  const releaseComposerHold = () => {
+    if (composerHoldTimer) clearTimeout(composerHoldTimer);
+    composerHoldTimer = null;
+    heldComposerFooter = null;
+    heldComposerEditor = null;
+    composerHoldSawChange = false;
+    document.getElementById(COMPOSER_HOLD_ID)?.remove();
+  };
+
+  const holdComposerForChatSwitch = () => {
+    releaseComposerHold();
+    const surface = document.querySelector(
+      ".composer-surface-chrome:not(.qq2007-composer-hold)",
+    );
+    if (!surface) return;
+
+    const rect = surface.getBoundingClientRect();
+    const clone = surface.cloneNode(true);
+    clone.querySelectorAll("[id]").forEach((node) => node.removeAttribute("id"));
+    clone.querySelectorAll("[contenteditable]").forEach((node) => {
+      node.removeAttribute("contenteditable");
+    });
+    clone.id = COMPOSER_HOLD_ID;
+    clone.classList.add("qq2007-composer-hold");
+    clone.setAttribute("aria-hidden", "true");
+    clone.setAttribute("inert", "");
+    clone.style.setProperty("--qq2007-hold-left", `${rect.left}px`);
+    clone.style.setProperty("--qq2007-hold-top", `${rect.top}px`);
+    clone.style.setProperty("--qq2007-hold-width", `${rect.width}px`);
+    clone.style.setProperty("--qq2007-hold-height", `${rect.height}px`);
+
+    heldComposerFooter = surface.querySelector(
+      '[class~="grid"]:has([data-codex-composer])',
+    );
+    heldComposerEditor = surface.querySelector("[data-codex-composer]");
+    document.body.appendChild(clone);
+    composerHoldTimer = setTimeout(releaseComposerHold, 800);
+  };
+
+  const updateComposerHold = () => {
+    if (!document.getElementById(COMPOSER_HOLD_ID)) return;
+    const surface = document.querySelector(
+      ".composer-surface-chrome:not(.qq2007-composer-hold)",
+    );
+    const footer = surface?.querySelector(
+      '[class~="grid"]:has([data-codex-composer])',
+    );
+    const editor = surface?.querySelector("[data-codex-composer]");
+    const ready = Boolean(
+      footer?.classList.contains("qq2007-composer-footer") &&
+        surface.querySelector('[data-composer-navigation-target="reasoning"]') &&
+        surface.querySelector(`#${USAGE_BUTTON_ID}`),
+    );
+
+    if (
+      !ready ||
+      footer !== heldComposerFooter ||
+      editor !== heldComposerEditor
+    ) {
+      composerHoldSawChange = true;
+    }
+    if (composerHoldSawChange && ready) releaseComposerHold();
+  };
+
+  const onChatNavigationPointerDown = (event) => {
+    if (event.button !== 0) return;
+    if (
+      event.target.closest(
+        'button[aria-label="Pin chat"], button[aria-label="Archive chat"]',
+      )
+    ) {
+      return;
+    }
+    const row = event.target.closest(
+      'aside.app-shell-left-panel [role="button"]',
+    );
+    const item = row?.closest('[role="listitem"]');
+    if (
+      !row ||
+      row.getAttribute("aria-current") === "page" ||
+      !item?.querySelector('button[aria-label="Archive chat"]')
+    ) {
+      return;
+    }
+    holdComposerForChatSwitch();
   };
 
   const ensure = () => {
@@ -905,11 +1001,34 @@
     );
   };
 
+  const mutationTouchesComposer = (record) => {
+    const target = record.target;
+    if (
+      target instanceof Element &&
+      target.closest(".composer-surface-chrome")
+    ) {
+      return true;
+    }
+
+    return [...record.addedNodes, ...record.removedNodes].some(
+      (node) =>
+        node instanceof Element &&
+        (node.matches(".composer-surface-chrome") ||
+          Boolean(node.querySelector(".composer-surface-chrome"))),
+    );
+  };
+
   const cleanup = () => {
     window.__CODEX_NATIVE_2007_DISABLED__ = true;
     observer?.disconnect();
     if (timer) clearInterval(timer);
     if (usageCaptureTimer) clearTimeout(usageCaptureTimer);
+    releaseComposerHold();
+    document.removeEventListener(
+      "pointerdown",
+      onChatNavigationPointerDown,
+      true,
+    );
     document.removeEventListener("pointerdown", onUsageOutsidePointerDown, true);
     document.removeEventListener("pointerdown", onPaletteOutsidePointerDown, true);
     document.removeEventListener("keydown", onUsageKeyDown, true);
@@ -924,6 +1043,7 @@
 
   window[STATE_KEY]?.cleanup?.();
   window.__CODEX_NATIVE_2007_DISABLED__ = false;
+  document.addEventListener("pointerdown", onChatNavigationPointerDown, true);
   document.addEventListener("pointerdown", onUsageOutsidePointerDown, true);
   document.addEventListener("pointerdown", onPaletteOutsidePointerDown, true);
   document.addEventListener("keydown", onUsageKeyDown, true);
@@ -931,6 +1051,13 @@
 
   ensure();
   observer = new MutationObserver((records) => {
+    // Composer controls mount in several React commits during chat navigation.
+    // Decorate each commit in the observer microtask so native buttons never
+    // reach a painted frame and the injected usage control does not jump in late.
+    if (records.some(mutationTouchesComposer)) {
+      decorateComposer();
+      updateComposerHold();
+    }
     if (records.some(mutationTouchesDecoratedUI)) scheduleEnsure();
   });
   observer.observe(document.documentElement, {

@@ -1219,6 +1219,20 @@ html.codex-native2007 .composer-surface-chrome {
   transition: none !important;
 }
 
+html.codex-native2007 .qq2007-composer-hold {
+  position: fixed !important;
+  inset: auto !important;
+  top: var(--qq2007-hold-top) !important;
+  left: var(--qq2007-hold-left) !important;
+  z-index: 89 !important;
+  width: var(--qq2007-hold-width) !important;
+  height: var(--qq2007-hold-height) !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  transition: none !important;
+}
+
 html.codex-native2007 .qq2007-composer-empty-attachments {
   display: none !important;
 }
@@ -1445,6 +1459,45 @@ html.codex-native2007 .qq2007-composer-footer
 }
 
 html.codex-native2007 .qq2007-composer-footer
+  :is(button, [role="button"]):active {
+  transform: translateY(1px);
+  background: linear-gradient(180deg, #cde5f6, #edf7fd) !important;
+  box-shadow:
+    inset 0 1px 2px rgb(18 77 124 / .2),
+    inset 0 -1px #ffffff !important;
+}
+
+/* The navigation controls arrive before the renderer's helper class while a
+   chat is switching. Style that raw footer immediately to avoid a native-button
+   flash; the helper-class rules above remain the steady-state equivalent. */
+html.codex-native2007 .composer-surface-chrome
+  [class~="grid"]:has([data-codex-composer])
+  [data-composer-navigation-target] {
+  color: #315b7d !important;
+  border: 1px solid transparent !important;
+  border-radius: 3px !important;
+}
+
+html.codex-native2007 .composer-surface-chrome
+  [class~="grid"]:has([data-codex-composer])
+  :is(
+    [data-composer-navigation-target="permissions"],
+    [data-composer-navigation-target="reasoning"]
+  ) {
+  border-color: #b2cde2 !important;
+  background: linear-gradient(180deg, #ffffff, #e8f3fb) !important;
+  box-shadow: inset 0 1px #ffffff !important;
+}
+
+html.codex-native2007 .composer-surface-chrome
+  [class~="grid"]:has([data-codex-composer])
+  :is(button, [role="button"]):hover {
+  border-color: #78a9cf !important;
+  background: linear-gradient(180deg, #ffffff, #d8ecfa) !important;
+}
+
+html.codex-native2007 .composer-surface-chrome
+  [class~="grid"]:has([data-codex-composer])
   :is(button, [role="button"]):active {
   transform: translateY(1px);
   background: linear-gradient(180deg, #cde5f6, #edf7fd) !important;
@@ -2155,6 +2208,12 @@ html.codex-native2007:is(
   .qq2007-composer-footer
     [data-composer-navigation-target="permissions"],
   .qq2007-composer-footer
+    [data-composer-navigation-target="reasoning"],
+  .composer-surface-chrome
+    [class~="grid"]:has([data-codex-composer])
+    [data-composer-navigation-target="permissions"],
+  .composer-surface-chrome
+    [class~="grid"]:has([data-codex-composer])
     [data-composer-navigation-target="reasoning"]
 ) {
   color: var(--qq-ink) !important;
