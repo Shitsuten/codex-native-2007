@@ -369,7 +369,10 @@
   };
 
   const onUsageOutsidePointerDown = (event) => {
-    if (usageCaptureInFlight) return;
+    if (
+      usageCaptureInFlight ||
+      document.documentElement.classList.contains("qq2007-usage-capturing")
+    ) return;
     const button = document.getElementById(USAGE_BUTTON_ID);
     const popover = document.getElementById(USAGE_POPOVER_ID);
     if (

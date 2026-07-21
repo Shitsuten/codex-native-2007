@@ -1291,6 +1291,21 @@ html.qq2007-usage-capturing
   pointer-events: none !important;
 }
 
+html.qq2007-usage-capturing:is(.codex-dream-skin, .codex-native2007)
+  aside.app-shell-left-panel
+  button[aria-label="Open profile menu"]:is(
+    :hover,
+    :focus-visible,
+    [data-state="open"],
+    [aria-expanded="true"]
+  ) {
+  border-color: transparent !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+
 html.codex-native2007 .qq2007-usage-popover {
   position: fixed;
   z-index: 90;
