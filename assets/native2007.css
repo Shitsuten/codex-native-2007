@@ -1250,9 +1250,7 @@ html.codex-native2007 .qq2007-composer-editor {
 /* First-frame composer fallback: these native attributes exist before the
    renderer has attached its qq2007 helper classes. */
 html.codex-native2007 .composer-surface-chrome
-  [class~="grid"]:has([data-composer-navigation-target="add-context"]):has(
-    [data-composer-navigation-target="reasoning"]
-  ):has([data-codex-composer]) {
+  [class~="grid"]:has([data-codex-composer]) {
   margin-bottom: 0 !important;
   padding: 7px 8px 8px !important;
   row-gap: 7px !important;
@@ -1265,9 +1263,7 @@ html.codex-native2007 .composer-surface-chrome
 }
 
 html.codex-native2007 .composer-surface-chrome
-  [class~="grid"]:has([data-composer-navigation-target="add-context"]):has(
-    [data-composer-navigation-target="reasoning"]
-  ):has([data-codex-composer])
+  [class~="grid"]:has([data-codex-composer])
   > :has([data-codex-composer]) {
   color: #17324c !important;
   margin-inline: 0 !important;
@@ -2144,9 +2140,7 @@ html.codex-native2007:is(
   [data-qq2007-palette="violet"],
   [data-qq2007-palette="mint"]
 ) .composer-surface-chrome
-  [class~="grid"]:has([data-composer-navigation-target="add-context"]):has(
-    [data-composer-navigation-target="reasoning"]
-  ):has([data-codex-composer])
+  [class~="grid"]:has([data-codex-composer])
   > :has([data-codex-composer]) {
   color: var(--qq-ink) !important;
   border-color: var(--qq-line-soft) !important;
@@ -2492,9 +2486,7 @@ html.codex-native2007:is(
   [data-qq2007-palette="violet"],
   [data-qq2007-palette="mint"]
 ) .composer-surface-chrome
-  [class~="grid"]:has([data-composer-navigation-target="add-context"]):has(
-    [data-composer-navigation-target="reasoning"]
-  ):has([data-codex-composer]) {
+  [class~="grid"]:has([data-codex-composer]) {
   background:
     linear-gradient(
       105deg,
